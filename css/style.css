@@ -29,7 +29,7 @@ body{
     width: 380px;
     z-index: 5;
     position: absolute;
-    top: 50%;
+    top: calc(50% + 80px);
     left:50%;
     transform:translate(-50%,-50%);
     animation: fadin 3s 1;
@@ -42,6 +42,10 @@ body{
     display: inline-block;
 }
 
+.navbar{
+    margin-bottom: 50px;
+}
+
 a{
     font-size: 24px;
     font-family: 微軟正黑體;
@@ -52,11 +56,6 @@ a{
 
 .bg-light {
     background-color: #f8f9fa2c!important;
-}
-
-.spaceMargin{
-    height: 100vh;
-    /* 待修改 */
 }
 
 .newMessage{
@@ -108,9 +107,8 @@ a{
 }
 
 .bg{
-    margin-top: 50px;/* 待修改 */
     width: 100%;
-    height: 80vh;/* 待修改 */
+    height: calc(100vh - 188px);/* 待修改 */
     background-size: cover;
     background-position: center;
 }
@@ -161,7 +159,7 @@ a{
     position: absolute;
     bottom:10px;
     left:50%;
-
+    display: none;
 /* 下面圈圈那層 */
 }
 
