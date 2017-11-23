@@ -142,7 +142,7 @@ a{
 
 .unslider-arrow.prev{
     top:50%;
-    opacity: 0;
+    opacity: 0.1;
 }
 
 .unslider-arrow.prev:hover {
@@ -192,6 +192,25 @@ a{
     width: 60%;
     height: auto;
 }
+
+#draggable { 
+    cursor:move;
+    height: 150px;
+    padding: 1em;
+    width: 300px;
+    text-align:center;
+    z-index: 50;
+  }
+  #clickAction{
+    background:red;
+    border-radius:3px;
+    color:white;
+    cursor:pointer;
+    padding:1em;
+  }
+  #clickAction.blue{
+    background:blue;
+  }
 
 @keyframes fadin{
     0% {

@@ -17,13 +17,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- 用fontawesome的svg圖的話，要找到他的網址 getStarted裡複製Font Awesome CDN到google
          點開即有可複製網址列 -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <style>
     </style>
 </head>
 
 <body>
 
-    <div class="top">
+    <div class="top my-slider">
+        <ul>
+            <li>
+                <div class="bg img0">
+
+                </div>
+            </li>
+            <li>
+                <div class="bg img1">
+
+                </div>
+            </li>
+            <li>
+                <div class="bg img2">
+
+                </div>
+            </li>
+            <li>
+                <div class="bg img3">
+
+                </div>
+            </li>
+        </ul>
         <img class="logo_center" src="/imgs/logo_center.png" alt="">
         <!-- <div  class="logo_center"></div> -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top:80px">
@@ -80,30 +103,17 @@
         </nav>
         <div class="space"></div>
         <div class="my-slider">
-            <ul>
-                <li>
-                    <div class="bg img0">
 
-                    </div>
-                </li>
-                <li>
-                    <div class="bg img1">
-
-                    </div>
-                </li>
-                <li>
-                    <div class="bg img2">
-
-                    </div>
-                </li>
-                <li>
-                    <div class="bg img3">
-
-                    </div>
-                </li>
-            </ul>
         </div>
     </div>
+
+    <div id="draggable" class="ui-widget-content">
+        <p>Draggable Div</p>
+        <div id="clickAction">Click Me! (I should change colour)</div>
+        <br>
+        <a href="https://gist.github.com/macmadill/26e5b72aa25cde405423" target="_blank">Unresponsive Link</a>
+    </div>
+
     <div class="clear" style="clear: both"></div>
 
     <div class="about_us">
@@ -165,6 +175,23 @@
     <script>
         AOS.init();
     </script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script>
+        $("#draggable").draggable();
+        $("#draggable").click(function () {
+            console.log('clicked!')
+        });
+
+        $("#clickAction").click(function () {
+            if ($(this).hasClass('blue')) {
+                $(this).removeClass('blue');
+            } else {
+                $(this).addClass('blue');
+            }
+        });
+    </script>
+
 </body>
 
 </html>
