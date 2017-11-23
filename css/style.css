@@ -195,10 +195,7 @@ a{
 /* 1180平板板 */
 @media Screen and (max-width: 1180px)
 {
-    .logo{
-        display: none;
-    }
-
+    
     .l4_margin{
     margin-left:0;
     }
@@ -206,12 +203,24 @@ a{
 /* 960手機板 */
 @media Screen and (max-width: 960px)
 {
+    .top{
+    background-image: url("../imgs/motcha_top_mobile.jpg");
+    }
     .logo{
         display: none;
     }
-
+    .logo_center{
+    width: 380px;
+    position: absolute;
+    top:100px;
+    left:50%;
+    transform:translateX(-50%);
+}
     .l4_margin{
     margin-left:0;
+    }
+    .my-slider{
+        display: none;
     }
 }
 
