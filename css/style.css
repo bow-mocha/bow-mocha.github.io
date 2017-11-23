@@ -44,6 +44,14 @@ body{
 
 .navbar{
     margin-bottom: 50px;
+    /* float: left;
+    display: none; */
+}
+
+.space{
+    float: left;
+    width: 870px;
+    height: 1px;
 }
 
 a{
@@ -108,9 +116,10 @@ a{
 
 .bg{
     width: 100%;
-    height: calc(100vh - 188px);/* 待修改 */
+    height: 100vh;/* 待修改 修改成全螢幕 calc(100vh - 188px)*/
     background-size: cover;
     background-position: center;
+    z-index: 1;
 }
 .img0{
     background-image: url("../imgs/000.jpg");
@@ -133,7 +142,7 @@ a{
 
 .unslider-arrow.prev{
     top:50%;
-    opacity: 0.1;
+    opacity: 0;
 }
 
 .unslider-arrow.prev:hover {
@@ -153,6 +162,7 @@ a{
 
 .unslider{
     position: relative;
+
 }
 /* banner最外面那層 */
 .unslider-nav{
