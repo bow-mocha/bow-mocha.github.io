@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/unslider-dots.css">
     <link rel="stylesheet" href="css/unslider.css">
+    <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- 用fontawesome的svg圖的話，要找到他的網址 getStarted裡複製Font Awesome CDN到google
          點開即有可複製網址列 -->
@@ -24,6 +25,7 @@
 
     <div class="top">
         <img class="logo_center" src="/imgs/logo_center.png" alt="">
+        <!-- <div  class="logo_center"></div> -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top:80px">
             <div class="container">
                 <div class="logo"></div>
@@ -102,6 +104,11 @@
         </div>
     </div>
     <div class="clear" style="clear: both"></div>
+
+    <div class="about_us">
+        <div class="note" data-aos="fade-up"></div>
+    </div>
+
     <div class="container">
         <hr class="hr-text" data-content="訊息專區">
         <div class="row">
@@ -134,7 +141,6 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
-    
     <script src="js/unslider-min.js"></script>
     <script>
         jQuery(document).ready(function ($) {
@@ -153,6 +159,10 @@
                 // 這三行是jQuery的初始化指令 jQuery=$字符號
                 // 用外部連結記得去network看有無載入
                 // arrows是放在 $('').unslider(裡面要加一個{}包起來)
+    </script>
+    <script src="/js/aos.js"></script>
+    <script>
+        AOS.init();
     </script>
 </body>
 

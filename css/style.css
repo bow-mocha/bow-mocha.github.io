@@ -163,6 +163,25 @@ a{
 /* 下面圈圈那層 */
 }
 
+.about_us{
+    position: relative;
+    background-image: url("../imgs/bg-black.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+.note{
+    position: absolute;
+    width: 782px;
+    height: 666px;
+    background-image: url("../imgs/note.png");
+    top: 50%;
+    left:50%;
+    margin-top: -330px;
+    margin-left: -333px;
+}
+
 @keyframes fadin{
     0% {
         opacity: 0;
@@ -173,8 +192,18 @@ a{
     }
 }
 
+/* 1180平板板 */
+@media Screen and (max-width: 1180px)
+{
+    .logo{
+        display: none;
+    }
 
-
+    .l4_margin{
+    margin-left:0;
+    }
+}
+/* 960手機板 */
 @media Screen and (max-width: 960px)
 {
     .logo{
