@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/unslider-dots.css">
+    <link rel="stylesheet" href="/css/unslider.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+            background-color: rgb(249, 255, 161);
+            height: 3000px;
+        }
+
+        .container {
+            border: 1px solid black;
+            height: 100vh;
+        }
+
+        .my-slider{
+            height: calc(100vh - 140px);
+        }
+
+        .logo {
+            height: 80px;
+            width: 100px;
+            border: 1px solid black;
+            background-image: url(https://lh3.googleusercontent.com/UMB2HRRRAAzXAEaCM9Gg-baCaDx_1RTXHscW5k2Ge3P4KP4mwTt2m6oyEHBWex3c4SxU=w300);
+            background-size: cover;
+            position: fixed;
+            left: 50%;
+            z-index: 2;
+        }
+
+        .img2 {
+            background-image: url(https://lh3.googleusercontent.com/SUbHqONTNfAk6kjgHY4lw_MD7oi3lRXhQXEbw5KCO-XHn1LVqM0xlTRYrhcGDApDZg=w300);
+        }
+
+        .box1 {
+            width: 100%;
+            height: calc(100vh - 140px);
+            background-image: url('/img/mocha.jpg');
+            background-size: cover;
+        }
+
+        .box2 {
+            width: 100%;
+            height: calc(100vh - 140px);
+            background-image: url(https://tarotbycecelia.files.wordpress.com/2017/06/img_0952.jpg);
+        }
+
+        .box3 {
+            width: 100%;
+            height: calc(100vh - 140px);
+            background-image: url(http://www.51pptmoban.com/d/file/2016/03/12/e15ca60865e8a9bf9b153e88ccf25ea5.jpg);
+        }
+
+        .top {
+            border: 1px solid black;
+            height: 60px;
+            width: 100%;
+            display: flex;
+            margin-top: 80px;
+        }
+
+        .lock{
+            position: fixed;
+            top: 80px;
+            z-index: 2;
+            margin-top: 0px;
+        }
+
+        .link {
+            border: 1px solid black;
+            flex: 1;
+            background-color: rgb(28, 211, 180);
+        }
+
+        .unslider-arrow {
+            top: 100px;
+        }
+
+        #backToTop {
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            line-height: 100px;
+            position: fixed;
+            right: 50px;
+            border-radius: 50%;
+            background-color: rgb(174, 24, 204);
+            color: white;
+            bottom: 0;
+            display: none;
+        }
+
+        #backToTop.show {
+            display: block;
+        }
+
+        #backToTop.hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="logo">LOGO</div>
+        <div class="top">
+            <div class="link">link1</div>
+            <div class="link">link2</div>
+            <div class="link">link3</div>
+            <div class="link">link4</div>
+            <div class="link">link5</div>
+        </div>
+
+
+        <div class="my-slider">
+            <ul>
+                <li>
+                    <div class="box1"></div>
+                </li>
+                <li>
+                    <div class="box2"></div>
+                </li>
+                <li>
+                    <div class="box3"></div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="space">123</div>
+    </div>
+
+
+
+
+    <div id="backToTop">
+        <i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i>
+    </div>
+
+
+
+
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/unslider-min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.my-slider').unslider({
+                arrows: {
+                    //  Unslider default behaviour
+                    prev: '<a class="unslider-arrow prev"><i class="fa fa-arrow-left fa-4x" aria-hidden="true"></i></a>',
+                    next: '<a class="unslider-arrow next"><i class="fa fa-arrow-right fa-4x" aria-hidden="true"></i></a>',
+                }
+            });
+        });
+
+        var position = $('#space').offset();
+       // console.log( 'sc'+ position.top);
+
+
+        $('#backToTop').click(function () {
+            //按下會執行的程式碼
+            $(window).scrollTop(0);
+        });
+
+        $(window).scroll(function () {
+            //卷軸在捲動時會執行的程式碼
+            var scrollTop = $(window).scrollTop();
+            console.log(scrollTop);
+
+            if (scrollTop >= position.top) {
+                $("#backToTop").addClass("show");
+                $("#backToTop").removeClass("hide");
+                $(".logo").addClass("img2");
+                $(".top").addClass("lock");
+            } else {
+                $("#backToTop").addClass("hide");
+                $("#backToTop").removeClass("show")
+                $(".logo").removeClass("img2");
+                $(".top").removeClass("lock");
+            }
+        });
+
+
+        //var position = $('#space').offset();
+        // console.log( 'sc'+ position.top);
+
+        var draggable_offset = $("#draggable").offset();
+
+        $(window).scroll(function () {
+            //卷軸在捲動時會執行的程式碼
+            var scrollTop = $(window).scrollTop();
+            var new_draggable_offset = scrollTop + draggable_offset.top;
+            $("#draggable").css({ 'top': new_draggable_offset });
+
+            
+
+            // addClass("change_top");
+
+
+            // if (scrollTop >= position.top) {
+            //     $("#backToTop").addClass("show");
+            //     $("#backToTop").removeClass("hide");
+
+            // } else {
+            //     $("#backToTop").addClass("hide");
+            //     $("#backToTop").removeClass("show");
+
+            // }
+        });
+
+
+
+
+
+
+
+
+
+        //var position = $('#space').offset();
+            // console.log( 'sc'+ position.top);
+
+            var draggable_offset = $("#draggable").offset();
+
+            $(window).scroll(function () {
+                //卷軸在捲動時會執行的程式碼
+                var scrollTop = $(window).scrollTop();
+                var new_draggable_offset = scrollTop + draggable_offset.top;
+                $("#draggable").css({ 'top': new_draggable_offset });
+
+
+
+                // addClass("change_top");
+
+
+                // if (scrollTop >= position.top) {
+                //     $("#backToTop").addClass("show");
+                //     $("#backToTop").removeClass("hide");
+
+                // } else {
+                //     $("#backToTop").addClass("hide");
+                //     $("#backToTop").removeClass("show");
+
+                // }
+            });
+    </script>
+
+
+</body>
+
+</html>

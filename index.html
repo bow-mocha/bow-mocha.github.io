@@ -19,10 +19,21 @@
          點開即有可複製網址列 -->
     <link rel="stylesheet" href="css/jquery-ui.min.css">
     <style>
+        .ui-widget-content{
+            position: absolute;
+            right: 100px;
+            bottom: 100px;
+        }
     </style>
 </head>
 
 <body>
+    <div id="draggable" class="ui-widget-content">
+        <p>Draggable Div</p>
+        <div id="clickAction">Click Me! (I should change colour)</div>
+        <br>
+        <a href="https://gist.github.com/macmadill/26e5b72aa25cde405423" target="_blank">Unresponsive Link</a>
+    </div>
 
     <div class="top my-slider">
         <ul>
@@ -107,12 +118,6 @@
         </div>
     </div>
 
-    <div id="draggable" class="ui-widget-content">
-        <p>Draggable Div</p>
-        <div id="clickAction">Click Me! (I should change colour)</div>
-        <br>
-        <a href="https://gist.github.com/macmadill/26e5b72aa25cde405423" target="_blank">Unresponsive Link</a>
-    </div>
 
     <div class="clear" style="clear: both"></div>
 
@@ -171,16 +176,14 @@
                 // 用外部連結記得去network看有無載入
                 // arrows是放在 $('').unslider(裡面要加一個{}包起來)
     </script>
-    <script src="/js/aos.js"></script>
+    <script src="js/aos.js"></script>
     <script>
         AOS.init();
     </script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
-        $("#draggable").draggable({
-            refreshPositions: true
-        });
+        $("#draggable").draggable();
         $("#draggable").click(function () {
             console.log('clicked!')
         });
@@ -191,6 +194,40 @@
             } else {
                 $(this).addClass('blue');
             }
+        });
+
+        //var position = $('#space').offset();
+        // console.log( 'sc'+ position.top);
+
+        var draggable_offset = $("#draggable").offset();
+
+        $(window).scroll(function () {
+            //卷軸在捲動時會執行的程式碼
+            var scrollTop = $(window).scrollTop();
+            //console.log(scrollTop);
+            
+            //console.log(draggable_offset.top);
+
+            var new_draggable_offset = scrollTop + draggable_offset.top;
+                $("#draggable").css({ 'top': new_draggable_offset });
+            //console.log('scrollTop:'+scrollTop);
+            //console.log('draggable_offset:' + draggable_offset.top);
+            //console.log(new_draggable_offset);
+
+            
+
+            // addClass("change_top");
+
+
+            // if (scrollTop >= position.top) {
+            //     $("#backToTop").addClass("show");
+            //     $("#backToTop").removeClass("hide");
+
+            // } else {
+            //     $("#backToTop").addClass("hide");
+            //     $("#backToTop").removeClass("show");
+
+            // }
         });
     </script>
 
