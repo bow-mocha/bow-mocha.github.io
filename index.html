@@ -178,7 +178,9 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
-        $("#draggable").draggable();
+        $("#draggable").draggable({
+            refreshPositions: true
+        });
         $("#draggable").click(function () {
             console.log('clicked!')
         });
