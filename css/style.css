@@ -216,6 +216,11 @@ a{
       
   }
 
+  .img {
+            width: 15rem;
+            float: left;
+        }
+
 @keyframes fadin{
     0% {
         opacity: 0;

@@ -18,8 +18,9 @@
     <!-- 用fontawesome的svg圖的話，要找到他的網址 getStarted裡複製Font Awesome CDN到google
          點開即有可複製網址列 -->
     <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
     <style>
-        .ui-widget-content{
+        .ui-widget-content {
             position: absolute;
             right: 100px;
             bottom: 100px;
@@ -125,6 +126,120 @@
         <img class="note" src="/imgs/note.png" data-aos="fade-up" alt="">
     </div>
 
+
+    <div class="container">
+        <div class="row product">
+            <div class="col-12 col-xl">
+                <div class="color"><a href="images/image-4.jpg" data-lightbox="image-1" data-title="moutain">
+                    <img class="img" src="images/image-4.jpg" alt="">
+                </a></div>
+                <!-- 沒有數字時 會依物件對分(flex:1:1:1) -->
+                <!-- 可以幾等分(ex:col 2 2 8) 可以想成手機板的大小-->
+                <!-- col-md-4 (md參考列表) 某個尺寸下會分成幾等分-->
+            </div>
+            <div class="col-12 col-xl">
+                <div class="color"><a href="images/ocean.jpg" data-lightbox="image-1" data-title="Ocean">
+                    <img class="img" src="images/ocean.jpg" alt="">
+                </a></div>
+                <!-- 可以幾等分(ex:col 2 2 8) 可以想成手機板的大小-->
+                <!-- col-md-4 (md參考列表) 某個尺寸下會分成幾等分-->
+            </div>
+        </div>
+
+        <div class="row product">
+            <div class="col-12 col-xl">
+                <div class="color">
+                    <a href="images/image-4.jpg" data-lightbox="image-1" data-title="moutain">
+                        <img class="img" src="images/image-4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-xl">
+                <div class="color">
+                    <a href="images/ocean.jpg" data-lightbox="image-1" data-title="Ocean">
+                        <img class="img" src="images/ocean.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row product">
+            <div class="col-12 col-xl">
+                <div class="color">
+                    <a href="images/image-4.jpg" data-lightbox="image-1" data-title="moutain">
+                        <img class="img" src="images/image-4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-xl">
+                <div class="color">
+                    <a href="images/ocean.jpg" data-lightbox="image-1" data-title="Ocean">
+                        <img class="img" src="images/ocean.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row product">
+            <div class="col-12 col-xl">
+                <div class="color">
+                    <a href="images/image-4.jpg" data-lightbox="image-1" data-title="moutain">
+                        <img class="img" src="images/image-4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-xl">
+                <div class="color">
+                    <a href="images/ocean.jpg" data-lightbox="image-1" data-title="Ocean">
+                        <img class="img" src="images/ocean.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row product">
+            <div class="col-12 col-xl">
+                <div class="color">
+                    <a href="images/image-4.jpg" data-lightbox="image-1" data-title="moutain">
+                        <img class="img" src="images/image-4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-xl">
+                <div class="color">
+                    <a href="images/ocean.jpg" data-lightbox="image-1" data-title="Ocean">
+                        <img class="img" src="images/ocean.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row product">
+            <div class="col-12 col-xl">
+                <div class="color">
+                    <a href="images/image-4.jpg" data-lightbox="image-1" data-title="moutain">
+                        <img class="img" src="images/image-4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-xl">
+                <div class="color">
+                    <a href="images/ocean.jpg" data-lightbox="image-1" data-title="Ocean">
+                        <img class="img" src="images/ocean.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
     <div class="container">
         <hr class="hr-text" data-content="訊息專區">
         <div class="row">
@@ -201,13 +316,37 @@
 
         var draggable_offset = $("#draggable").offset();
 
-            $(window).scroll(function () {
-                //卷軸在捲動時會執行的程式碼
-                var scrollTop = $(window).scrollTop();
-                var new_draggable_offset = scrollTop + draggable_offset.top;
-                $("#draggable").css({ 'top': new_draggable_offset });
+        $(window).scroll(function () {
+            //卷軸在捲動時會執行的程式碼
+            var scrollTop = $(window).scrollTop();
+            //console.log(scrollTop);
+
+            //console.log(draggable_offset.top);
+
+            var new_draggable_offset = scrollTop + draggable_offset.top;
+            $("#draggable").css({ 'top': draggable_offset.top + 5 });
+            //console.log('scrollTop:'+scrollTop);
+            //console.log('draggable_offset:' + draggable_offset.top);
+            //console.log(new_draggable_offset);
+
+
+
+            // addClass("change_top");
+
+
+            // if (scrollTop >= position.top) {
+            //     $("#backToTop").addClass("show");
+            //     $("#backToTop").removeClass("hide");
+
+            // } else {
+            //     $("#backToTop").addClass("hide");
+            //     $("#backToTop").removeClass("show");
+
+            // }
         });
     </script>
+    <script src="js/lightbox-plus-jquery.js"></script>
+
 
 </body>
 
