@@ -21,7 +21,7 @@ body{
     left:50%;
     transform:translateX(-50%);
     background-position: center;
-    z-index: 3;
+    z-index: 5;
 }
 
 .logo_center{
@@ -213,7 +213,7 @@ a{
   }
 
   .change_top{
-      
+      background-image: url("../imgs/motcha_top101.jpg");
   }
 
   .img {
