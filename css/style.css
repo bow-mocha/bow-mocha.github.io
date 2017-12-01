@@ -125,13 +125,13 @@ a{
     background-image: url("../imgs/000.jpg");
 }
 .img1{
-    background-image: url("../imgs/pro01.jpg");
+    background-image: url("../imgs/000.jpg");
 }
 .img2{
-    background-image: url("../imgs/pro05.jpg");
+    background-image: url("../imgs/000.jpg");
 }
  .img3{
-    background-image: url("../imgs/pro09.jpg");
+    background-image: url("../imgs/000.jpg");
 }
 
 .unslider-arrow{
@@ -195,22 +195,24 @@ a{
 
 #draggable { 
     cursor:move;
-    height: 150px;
-    padding: 1em;
-    width: 300px;
-    text-align:center;
+    width: 1px;
+    height: 1px;
+    /* padding: 1em; */
+    background-color: rgb(125, 218, 125);
+    /* text-align:center; */
     z-index: 50;
   }
-  #clickAction{
-    background:red;
+.dra_img{
+    width: 150px;
+}
+#clickAction{
     border-radius:3px;
-    color:white;
     cursor:pointer;
-    padding:1em;
-  }
-  #clickAction.blue{
+    padding:195px;
+}
+#clickAction.blue{
     background:blue;
-  }
+}
 
   .change_top{
       background-image: url("../imgs/motcha_top101.jpg");

@@ -30,10 +30,10 @@
 
 <body>
     <div id="draggable" class="ui-widget-content">
-        <p>Draggable Div</p>
-        <div id="clickAction">Click Me! (I should change colour)</div>
-        <br>
-        <a href="https://gist.github.com/macmadill/26e5b72aa25cde405423" target="_blank">Unresponsive Link</a>
+
+        <img class="dra_img" src="/imgs/logo.png" alt="">
+        <div id="clickAction"></div>
+        
     </div>
 
     <div id="top" class="top my-slider">
@@ -61,7 +61,7 @@
         </ul>
         <img class="logo_center" src="/imgs/logo_center.png" alt="">
         <!-- <div  class="logo_center"></div> -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top:80px">
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top:80px">
             <div class="container">
                 <div class="logo"></div>
 
@@ -69,7 +69,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- 漢堡條圖案按鈕 -->
+                
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mt-1">
@@ -112,7 +112,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
         <div class="space"></div>
         <div class="my-slider">
 
@@ -291,24 +291,28 @@
         // console.log( 'sc'+ position.top);
 
         var draggable_offset = $("#draggable").offset();
-
+        
         $(window).scroll(function () {
             //卷軸在捲動時會執行的程式碼
             var scrollTop = $(window).scrollTop();
             //console.log(scrollTop);
 
             //console.log(draggable_offset.top);
-
             var new_draggable_offset = scrollTop + draggable_offset.top;
-            $("#draggable").css({ 'top': draggable_offset.top + 5 });
+            
+            $("#draggable").css({ 'top': new_draggable_offset });
             //console.log('scrollTop:'+scrollTop);
             //console.log('draggable_offset:' + draggable_offset.top);
             //console.log(new_draggable_offset);
 
 
 
-            // addClass("change_top");
 
+
+
+
+
+            // addClass("change_top");
 
             // if (scrollTop >= position.top) {
             //     $("#backToTop").addClass("show");
