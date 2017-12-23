@@ -291,6 +291,8 @@
         // console.log( 'sc'+ position.top);
 
         var draggable_offset = $("#draggable").offset();
+
+        var last_scrollTop = 0;
         
         $(window).scroll(function () {
             //卷軸在捲動時會執行的程式碼
@@ -298,7 +300,9 @@
             //console.log(scrollTop);
 
             //console.log(draggable_offset.top);
-            var new_draggable_offset = scrollTop + draggable_offset.top;
+
+            var new_draggable_offset = -last_scrollTop + scrollTop + draggable_offset.top;
+            last_scrollTop = scrollTop;
             
             $("#draggable").css({ 'top': new_draggable_offset });
             //console.log('scrollTop:'+scrollTop);
