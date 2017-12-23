@@ -290,21 +290,21 @@
         //var position = $('#space').offset();
         // console.log( 'sc'+ position.top);
 
-        var draggable_offset = $("#draggable").offset();
-
+        
+        var draggable = $("#draggable");
         var last_scrollTop = 0;
         
         $(window).scroll(function () {
             //卷軸在捲動時會執行的程式碼
-            var scrollTop = $(window).scrollTop();
-            //console.log(scrollTop);
+            var new_scrollTop = $(window).scrollTop();
 
-            //console.log(draggable_offset.top);
-
-            var new_draggable_offset = -last_scrollTop + scrollTop + draggable_offset.top;
-            last_scrollTop = scrollTop;
+            var draggable_offset = draggable.offset();
+            var new_draggable_top = draggable_offset.top - last_scrollTop + new_scrollTop;
+            last_scrollTop = new_scrollTop;
+            //console.log(scrollTop)
+            //console.log(new_draggable_top)
             
-            $("#draggable").css({ 'top': new_draggable_offset });
+            draggable.css({ 'top': new_draggable_top });
             //console.log('scrollTop:'+scrollTop);
             //console.log('draggable_offset:' + draggable_offset.top);
             //console.log(new_draggable_offset);
